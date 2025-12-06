@@ -37,3 +37,6 @@ yarn-error.log*
 .vscode
 *.swp
 *.swo
+
+# Just TXT
+Паспорт).txt

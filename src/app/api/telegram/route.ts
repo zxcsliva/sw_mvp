@@ -9,6 +9,7 @@ interface ContactFormData {
   contact: string;
   object: string;
   description: string;
+  lang: "ru" | "en" | "kk";
 }
 
 interface ConfiguratorData {
@@ -26,14 +27,17 @@ interface ConfiguratorData {
   level: string;
   total: number;
   currency: string;
+  lang: "ru" | "en" | "kk";
 }
 
 type RequestData = ContactFormData | ConfiguratorData;
 
 function formatContactMessage(data: ContactFormData): string {
+  const langMap = { ru: "🇷🇺 Русский", en: "🇬🇧 English", kk: "🇰🇿 Қазақ" };
   return `
 📋 <b>ЗАПРОС НА КОНСУЛЬТАЦИЮ</b>
 
+🌐 <b>Язык:</b> ${langMap[data.lang]}
 👤 <b>Имя:</b> ${data.name}
 📞 <b>Контакт:</b> ${data.contact}
 🏢 <b>Объект:</b> ${data.object}
@@ -44,6 +48,7 @@ function formatContactMessage(data: ContactFormData): string {
 function formatConfiguratorMessage(data: ConfiguratorData): string {
   const RUB_TO_KZT = 5.6;
   const totalKzt = Math.round(data.total * RUB_TO_KZT);
+  const langMap = { ru: "🇷🇺 Русский", en: "🇬🇧 English", kk: "🇰🇿 Қазақ" };
   
   const zoneNames: Record<string, string> = {
     living: "Гостиная",
@@ -92,6 +97,7 @@ function formatConfiguratorMessage(data: ConfiguratorData): string {
 📞 <b>Контакт:</b> ${data.contact}
 🏢 <b>Объект:</b> ${data.object}
 📝 <b>Описание:</b> ${data.description}
+🌐 <b>Язык:</b> ${langMap[data.lang]}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 📐 <b>КОНФИГУРАЦИЯ:</b>

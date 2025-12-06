@@ -249,7 +249,8 @@ export default function HomePage() {
           name: contactForm.name,
           contact: contactForm.contact,
           object: contactForm.object,
-          description: contactForm.description
+          description: contactForm.description,
+          lang: lang
         })
       });
 

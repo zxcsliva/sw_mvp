@@ -789,7 +789,8 @@ function Step4({ estimate, summary, lang, state }: Step4Props) {
           features: state.features,
           level: state.level,
           total: estimate?.total || 0,
-          currency: "KZT"
+          currency: "KZT",
+          lang: lang
         })
       });
 
