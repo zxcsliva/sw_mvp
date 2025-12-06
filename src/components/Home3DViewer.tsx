@@ -164,7 +164,9 @@ function Scene({ objectType, zones, features, level }: Home3DViewerProps) {
 
   return (
     <>
-      <hemisphereLight skyColor="#0f172a" groundColor="#05060a" intensity={0.35} />
+      <hemisphereLight
+        args={["#0f172a", "#05060a", 0.35]}
+      />
       <ambientLight intensity={0.25} />
       <directionalLight
         position={[6, 10, 6]}
