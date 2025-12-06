@@ -65,7 +65,7 @@ const initialState: StepState = {
   level: ""
 };
 
-const levelMultipliers: Record<NonNullable<StepState["level"]>, number> = {
+const levelMultipliers: Record<"basic" | "optimal" | "premium", number> = {
   basic: 1,
   optimal: 1.35,
   premium: 1.8
