@@ -253,6 +253,7 @@ export function Configurator() {
                   state={state}
                   toggleZone={toggleZone}
                   toggleFeature={toggleFeature}
+                  lang={lang}
                 />
               </div>
               <button
@@ -395,26 +396,26 @@ export function Configurator() {
               transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
               className="text-2xl font-bold text-white"
             >
-              {formatKZT(estimate.total)}
+              {formatKZT(estimate.total, lang)}
             </motion.div>
           </div>
           <div className="grid grid-cols-3 gap-4 text-xs text-[#cbd5e1]">
             <div>
               <div className="text-[10px] text-[#94a3b8] mb-1">Оборудование</div>
                 <div className="font-semibold text-white">
-                  {formatKZT(estimate.equipment)}
+                  {formatKZT(estimate.equipment, lang)}
                 </div>
             </div>
             <div>
               <div className="text-[10px] text-[#94a3b8] mb-1">Монтаж</div>
                 <div className="font-semibold text-white">
-                  {formatKZT(estimate.works)}
+                  {formatKZT(estimate.works, lang)}
                 </div>
             </div>
             <div>
               <div className="text-[10px] text-[#94a3b8] mb-1">Пусконаладка</div>
                 <div className="font-semibold text-white">
-                  {formatKZT(estimate.commissioning)}
+                  {formatKZT(estimate.commissioning, lang)}
                 </div>
             </div>
           </div>
@@ -557,9 +558,10 @@ interface Step2Props {
   state: StepState;
   toggleZone: (key: ZoneKey) => void;
   toggleFeature: (key: FeatureKey) => void;
+  lang: "ru" | "en" | "kk";
 }
 
-function Step2({ state, toggleZone, toggleFeature }: Step2Props) {
+function Step2({ state, toggleZone, toggleFeature, lang }: Step2Props) {
   return (
     <div className="space-y-6">
       <div className="text-lg font-semibold text-white mb-6">
