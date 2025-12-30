@@ -6,7 +6,7 @@
    (Правый клик на PowerShell → "Запуск от имени администратора")
 
 2. ПЕРЕЙДИТЕ В ПАПКУ ПРОЕКТА:
-   cd C:\Users\zxslivasx\Desktop\moskal_refactor\smart-home-landing
+   cd C:\smart-home-landing
 
 3. ЕСЛИ ВОЗНИКНЕТ ОШИБКА С ПОЛИТИКОЙ ВЫПОЛНЕНИЯ, ВЫПОЛНИТЕ:
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
